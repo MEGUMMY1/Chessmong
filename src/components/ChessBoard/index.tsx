@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useCallback } from "react";
 import { useRecoilState } from "recoil";
 import { chessState } from "../../states/chessState";
 import Chessground from "@react-chess/chessground";
@@ -15,18 +15,18 @@ export default function ChessBoard() {
   const [turnColor, setTurnColor] = useState<"white" | "black">("white");
   const [history, setHistory] = useState<string[]>([chess.fen()]);
 
-  const changeTurn = () => {
+  const changeTurn = useCallback(() => {
     setTurnColor(turnColor === "white" ? "black" : "white");
-  };
+  }, [turnColor]);
 
-  const undoMove = () => {
+  const undoMove = useCallback(() => {
     if (history.length > 1) {
       const lastFen = history[history.length - 2];
       const newChess = new Chess(lastFen);
       setChess(newChess);
       setHistory(history.slice(0, -1));
     }
-  };
+  }, [history, setChess]);
 
   const toDests = (chessInstance: typeof chess) => {
     const dests = new Map();
@@ -91,7 +91,7 @@ export default function ChessBoard() {
     return () => {
       window.removeEventListener("keydown", handleKeyDown);
     };
-  }, [history, chess.fen(), undoMove]);
+  }, [undoMove]);
 
   return (
     <div className={styles.container}>
