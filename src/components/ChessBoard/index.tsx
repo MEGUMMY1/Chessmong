@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
-import { useRecoilState, useRecoilValue } from "recoil";
+import { useRecoilState } from "recoil";
 import { chessState } from "../../states/chessState";
-import { positionsState } from "../../states/positionsState";
 import Chessground from "@react-chess/chessground";
 import "../../assets/chessground.base.css";
 import "../../assets/chessground.brown.css";
@@ -10,38 +9,17 @@ import turnicon from "../../assets/icons/turn-icon.svg";
 import { Chess, SQUARES, Square } from "chess.js";
 import { Key } from "chessground/types";
 import Button from "../Button";
-import { ChessBoardProps } from "./ChessBoard.types";
 import styles from "./ChessBoard.module.scss";
 
-export default function ChessBoard({ onSavePosition, onFenChange }: ChessBoardProps) {
+export default function ChessBoard() {
   const [chess, setChess] = useRecoilState(chessState);
   const [turnColor, setTurnColor] = useState<"white" | "black">("white");
   const [isRotated, setIsRotated] = useState(false);
   const [history, setHistory] = useState<string[]>([chess.fen()]);
-  const positions = useRecoilValue(positionsState);
-
-  useEffect(() => {
-    onFenChange(chess.fen());
-  }, [chess.fen(), onFenChange]);
 
   const changeTurn = () => {
     setTurnColor(turnColor === "white" ? "black" : "white");
     setIsRotated((prev) => !prev);
-  };
-
-  const savePosition = () => {
-    const currentFen = chess.fen();
-
-    if (positions.length === 0) {
-      onSavePosition(currentFen);
-      return;
-    }
-
-    if (!positions.includes(currentFen)) {
-      onSavePosition(currentFen);
-    } else {
-      alert("이미 저장된 상태입니다!");
-    }
   };
 
   const undoMove = () => {
@@ -105,10 +83,7 @@ export default function ChessBoard({ onSavePosition, onFenChange }: ChessBoardPr
 
   useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {
-      if (event.ctrlKey && event.key === "s") {
-        event.preventDefault();
-        savePosition();
-      } else if (event.ctrlKey && event.key === "z") {
+      if (event.ctrlKey && event.key === "z") {
         event.preventDefault();
         undoMove();
       }
@@ -137,9 +112,6 @@ export default function ChessBoard({ onSavePosition, onFenChange }: ChessBoardPr
         </div>
       </div>
       <div className={styles.buttons}>
-        <div className={styles.button}>
-          <Button onClick={savePosition}>상태저장</Button>
-        </div>
         <div className={styles.rightButton}>
           <Button onClick={undoMove}>되돌리기</Button>
         </div>
