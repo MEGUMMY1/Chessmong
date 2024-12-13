@@ -5,7 +5,6 @@ import Chessground from "@react-chess/chessground";
 import "../../assets/chessground.base.css";
 import "../../assets/chessground.brown.css";
 import "../../assets/chessground.cburnett.css";
-import turnicon from "../../assets/icons/turn-icon.svg";
 import { Chess, SQUARES, Square } from "chess.js";
 import { Key } from "chessground/types";
 import Button from "../Button";
@@ -92,7 +91,7 @@ export default function ChessBoard() {
     return () => {
       window.removeEventListener("keydown", handleKeyDown);
     };
-  }, [history, chess.fen()]);
+  }, [history, chess.fen(), undoMove]);
 
   return (
     <div className={styles.container}>
