@@ -1,5 +1,5 @@
 .container {
-  width: 200px;
+  width: 120px;
   height: 50px;
   display: flex;
   align-items: center;
@@ -17,6 +17,14 @@
 
   &:hover {
     background-color: #e2cba7;
+  }
+
+  &.disabled {
+    opacity: 0.5;
+  }
+
+  &.disabled:hover {
+    background-color: #f0d9b5;
   }
 
   @media (max-width: 550px) {
