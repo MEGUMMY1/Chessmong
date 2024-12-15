@@ -12,6 +12,7 @@ import styles from "./ChessBoard.module.scss";
 import { useLectures } from "../../apis/get/getLecturesList";
 import Spinner from "../Layout/Spinner";
 import { Lecture } from "../../types/types";
+import { timeAgo } from "../../utils/timeAgo";
 
 export default function ChessBoard() {
   const [chess, setChess] = useRecoilState(chessState);
@@ -144,7 +145,7 @@ export default function ChessBoard() {
                           <div className={styles.subtitle}>
                             <p>{lecture.channelName}</p>
                             <p>·</p>
-                            <p>{new Date(lecture.publishedAt).toLocaleDateString()}</p>
+                            <p>{timeAgo(new Date(lecture.publishedAt))}</p>
                           </div>
                         </div>
                       </div>
