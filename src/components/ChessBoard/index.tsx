@@ -9,11 +9,16 @@ import { Chess, SQUARES, Square } from "chess.js";
 import { Key } from "chessground/types";
 import Button from "../Button";
 import styles from "./ChessBoard.module.scss";
+import { useLectures } from "../../apis/get/getLecturesList";
+import Spinner from "../Layout/Spinner";
+import { Lecture } from "../../types/types";
 
 export default function ChessBoard() {
   const [chess, setChess] = useRecoilState(chessState);
   const [turnColor, setTurnColor] = useState<"white" | "black">("white");
   const [history, setHistory] = useState<string[]>([chess.fen()]);
+  const [lectures, setLectures] = useState<any[]>([]);
+  const { data, isLoading } = useLectures(chess.fen());
 
   const changeTurn = useCallback(() => {
     setTurnColor(turnColor === "white" ? "black" : "white");
@@ -80,7 +85,7 @@ export default function ChessBoard() {
 
   useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {
-      if (event.ctrlKey && event.key === "z") {
+      if ((event.ctrlKey || event.metaKey) && event.key === "z") {
         event.preventDefault();
         undoMove();
       }
@@ -93,17 +98,74 @@ export default function ChessBoard() {
     };
   }, [undoMove]);
 
+  const handleLectureClick = (link: string) => {
+    window.open(link, "_blank");
+  };
+
+  if (isLoading) {
+    <Spinner />;
+  }
+
   return (
     <div className={styles.container}>
-      <div className={styles.chessContainer}>
-        <Chessground key={chess.fen()} config={config} contained={true} />
-      </div>
-      <div className={styles.buttons}>
-        <div onClick={changeTurn} role="button" tabIndex={0}>
-          <Button onClick={undoMove}>흑백전환</Button>
-        </div>
-        <Button onClick={undoMove}>되돌리기</Button>
-      </div>
+      <section className={styles.sectionContainer}>
+        <section className={styles.section}>
+          <div className={styles.chessContainer}>
+            <Chessground key={chess.fen()} config={config} contained={true} />
+          </div>
+          <div className={styles.buttons}>
+            <div onClick={changeTurn} role="button" tabIndex={0}>
+              <Button onClick={undoMove}>흑백전환</Button>
+            </div>
+            <Button onClick={() => setLectures(data)}>상태검색</Button>
+            <Button onClick={undoMove}>되돌리기</Button>
+          </div>
+        </section>
+        <section className={styles.section}>
+          <div className={styles.listContainer}>
+            {lectures.length > 0 ? (
+              <div className={styles.innerContainer}>
+                <ul className={styles.lectures}>
+                  {lectures.map((lecture: Lecture, index: number) => (
+                    <li key={index}>
+                      <div
+                        className={styles.lectureWrapper}
+                        onClick={() => handleLectureClick(lecture.link)}
+                      >
+                        <img
+                          className={styles.image}
+                          src={lecture.image}
+                          alt={lecture.title}
+                          width={100}
+                          height={80}
+                        />
+                        <div className={styles.lectureInfo}>
+                          <h3 className={styles.title}>{lecture.title}</h3>
+                          <div className={styles.subtitle}>
+                            <p>{lecture.channelName}</p>
+                            <p>·</p>
+                            <p>{new Date(lecture.publishedAt).toLocaleDateString()}</p>
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ) : (
+              <div className={styles.noResult}>
+                <img
+                  src="https://cdn-icons-png.flaticon.com/128/11610/11610982.png"
+                  width={120}
+                  height={120}
+                  alt="결과 없음"
+                />
+                <p>현재 상태로 등록된 강의가 없습니다.</p>
+              </div>
+            )}
+          </div>
+        </section>
+      </section>
     </div>
   );
 }
