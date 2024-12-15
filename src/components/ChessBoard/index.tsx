@@ -85,6 +85,12 @@ export default function ChessBoard() {
   };
 
   useEffect(() => {
+    if (data) {
+      setLectures(data);
+    }
+  }, [data]);
+
+  useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {
       if ((event.ctrlKey || event.metaKey) && event.key === "z") {
         event.preventDefault();
@@ -104,7 +110,7 @@ export default function ChessBoard() {
   };
 
   if (isLoading) {
-    <Spinner />;
+    return <Spinner />;
   }
 
   return (
@@ -118,7 +124,6 @@ export default function ChessBoard() {
             <div onClick={changeTurn} role="button" tabIndex={0}>
               <Button onClick={undoMove}>흑백전환</Button>
             </div>
-            <Button onClick={() => setLectures(data)}>상태검색</Button>
             <Button onClick={undoMove}>되돌리기</Button>
           </div>
         </section>
