@@ -109,10 +109,6 @@ export default function ChessBoard() {
     window.open(link, "_blank");
   };
 
-  if (isLoading) {
-    return <Spinner />;
-  }
-
   return (
     <div className={styles.container}>
       <section className={styles.sectionContainer}>
@@ -129,7 +125,9 @@ export default function ChessBoard() {
         </section>
         <section className={styles.section}>
           <div className={styles.listContainer}>
-            {lectures.length > 0 ? (
+            {isLoading ? (
+              <Spinner />
+            ) : lectures.length > 0 ? (
               <div className={styles.innerContainer}>
                 <ul className={styles.lectures}>
                   {lectures.map((lecture: Lecture, index: number) => (
