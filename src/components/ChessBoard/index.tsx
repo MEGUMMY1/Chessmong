@@ -140,8 +140,7 @@ export default function ChessBoard() {
                           className={styles.image}
                           src={lecture.image}
                           alt={lecture.title}
-                          width={100}
-                          height={80}
+                          width={120}
                         />
                         <div className={styles.lectureInfo}>
                           <h3 className={styles.title}>{lecture.title}</h3>

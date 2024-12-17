@@ -83,6 +83,7 @@
   @media (max-width: 550px) {
     width: 500px;
     height: 500px;
+    padding: 15px 10px 15px 15px;
   }
   @media (max-width: 450px) {
     width: 400px;
@@ -133,13 +134,14 @@
     .lectureWrapper {
       background-color: #fff;
       border-radius: 5px;
-      padding: 20px;
+      padding: 15px;
       display: flex;
       gap: 20px;
       cursor: pointer;
 
       @media (max-width: 550px) {
         flex-direction: column;
+        gap: 15px;
       }
 
       .lectureInfo {
@@ -150,6 +152,7 @@
 
       .image {
         align-self: center;
+        border-radius: 5px;
 
         @media (max-width: 550px) {
           align-self: flex-start;
