@@ -13,14 +13,15 @@
   }
 
   .inner {
-    width: 65%;
+    width: 70%;
     display: flex;
     flex-direction: column;
+    gap: 50px;
   }
 }
 
 .footer {
-  width: 65%;
+  width: 70%;
   height: 50px;
   display: flex;
   justify-content: space-between;
