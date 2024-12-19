@@ -169,6 +169,14 @@ export default function ChessBoard() {
           </div>
         </section>
       </section>
+      <h2 className={styles.keyword}>
+        체스의 현재 상태를 입력하면 맞춤형 유튜브 체스 강의 목록을 확인할 수 있어요! 체스 실력을
+        빠르게 향상시키는 방법!
+      </h2>
+      <h2 className={styles.keyword}>
+        체스,체스몽,체스 현재 상태,chess,fen,chess fen,체스 유튜브,체스 강의,체스 강의 목록,체스
+        실력,체스 시작,체스 초보,체스 오프닝,체스 입문,기물 교환,체스 해설,온라인 체스,체스 고수
+      </h2>
     </div>
   );
 }
