@@ -1,12 +1,18 @@
 import styles from "./Layout.module.scss";
 import { LayoutProps } from "./Layout.types";
+import Logo from "../../assets/images/logo.png";
 
 export default function Layout({ children }: LayoutProps) {
   return (
     <div className={styles.container}>
-      <div className={styles.inner}>
-        {children}
-        <footer className={styles.footer}>
+      <div className={styles.bar}>
+        <div className={styles.title}>
+          <img src={Logo} width={160} alt="체스몽" style={{ cursor: "pointer" }} />
+        </div>
+      </div>
+      <div className={styles.inner}>{children}</div>
+      <footer className={styles.footer}>
+        <div className={styles.footerWrapper}>
           <p className={styles.reservedTxt}>© CHESSMONG, All rights reserved.</p>
           <a
             className={styles.contactBtn}
@@ -16,8 +22,8 @@ export default function Layout({ children }: LayoutProps) {
           >
             Contact
           </a>
-        </footer>
-      </div>
+        </div>
+      </footer>
     </div>
   );
 }

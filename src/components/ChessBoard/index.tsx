@@ -13,6 +13,7 @@ import { useLectures } from "../../apis/get/getLecturesList";
 import Spinner from "../Layout/Spinner";
 import { Lecture } from "../../types/types";
 import { timeAgo } from "../../utils/timeAgo";
+import Logo from "../../assets/images/logo.png";
 
 export default function ChessBoard() {
   const [chess, setChess] = useRecoilState(chessState);
@@ -109,6 +110,16 @@ export default function ChessBoard() {
     window.open(link, "_blank");
   };
 
+  const handleRequest = () => {
+    const fen = chess.fen();
+    const subject = "[체스 문의]";
+    const body = `FEN: ${fen}`;
+    const mailtoLink = `mailto:leemhoon000@gmail.com?subject=${encodeURIComponent(
+      subject
+    )}&body=${encodeURIComponent(body)}`;
+
+    window.location.href = mailtoLink;
+  };
   return (
     <div className={styles.container}>
       <section className={styles.sectionContainer}>
@@ -157,26 +168,25 @@ export default function ChessBoard() {
               </div>
             ) : (
               <div className={styles.noResult}>
-                <img
-                  src="https://cdn-icons-png.flaticon.com/128/11610/11610982.png"
-                  width={120}
-                  height={120}
-                  alt="결과 없음"
-                />
-                <p>현재 상태로 등록된 강의가 없습니다.</p>
+                {history.length === 1 ? (
+                  <>
+                    <img src={Logo} width={250} alt="결과 없음" />
+                    <p className={styles.message}>체스판을 구성하면 강의를 검색해드려요!</p>
+                  </>
+                ) : (
+                  <>
+                    <img src={Logo} width={250} alt="결과 없음" />
+                    <p className={styles.message}>현재 상태로 등록된 강의가 없어요!</p>
+                    <button onClick={handleRequest} className={styles.requestBtn}>
+                      강의 요청
+                    </button>
+                  </>
+                )}
               </div>
             )}
           </div>
         </section>
       </section>
-      <h2 className={styles.keyword}>
-        체스의 현재 상태를 입력하면 맞춤형 유튜브 체스 강의 목록을 확인할 수 있어요! 체스 실력을
-        빠르게 향상시키는 방법!
-      </h2>
-      <h2 className={styles.keyword}>
-        체스,체스몽,체스 현재 상태,chess,fen,chess fen,체스 유튜브,체스 강의,체스 강의 목록,체스
-        실력,체스 시작,체스 초보,체스 오프닝,체스 입문,기물 교환,체스 해설,온라인 체스,체스 고수
-      </h2>
     </div>
   );
 }
