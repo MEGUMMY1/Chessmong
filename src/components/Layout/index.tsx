@@ -3,11 +3,21 @@ import { LayoutProps } from "./Layout.types";
 import Logo from "../../assets/images/logo.png";
 
 export default function Layout({ children }: LayoutProps) {
+  const handleReset = () => {
+    window.location.reload();
+  };
+
   return (
     <div className={styles.container}>
       <div className={styles.bar}>
         <div className={styles.title}>
-          <img src={Logo} width={160} alt="체스몽" style={{ cursor: "pointer" }} />
+          <img
+            src={Logo}
+            width={160}
+            alt="체스몽"
+            style={{ cursor: "pointer" }}
+            onClick={handleReset}
+          />
         </div>
       </div>
       <div className={styles.inner}>{children}</div>
