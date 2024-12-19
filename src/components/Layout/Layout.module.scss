@@ -11,4 +11,36 @@
     padding: 40px 15px;
     height: fit-content;
   }
+
+  .inner {
+    width: 75%;
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.footer {
+  width: 75%;
+  height: 50px;
+  display: flex;
+  justify-content: space-between;
+  position: fixed;
+  bottom: 0;
+}
+
+.reservedTxt {
+  color: #fff;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.contactBtn {
+  color: #fff;
+  cursor: pointer;
+
+  &:hover {
+    color: #b5aa99;
+  }
 }
