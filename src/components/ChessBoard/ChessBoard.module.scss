@@ -26,6 +26,7 @@
 
       @media (max-width: 1024px) {
         height: auto;
+        margin-top: 0;
       }
     }
   }
@@ -80,6 +81,7 @@
   @media (max-width: 1024px) {
     width: 700px;
     height: 700px;
+    margin-bottom: 0;
   }
   @media (max-width: 550px) {
     width: 500px;
