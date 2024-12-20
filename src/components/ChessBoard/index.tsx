@@ -137,10 +137,10 @@ export default function ChessBoard() {
               role="button"
               tabIndex={0}
             >
-              <img src={changeicon} width={50} />
+              <img src={changeicon} width={50} alt="흑백전환" />
             </div>
             <div onClick={undoMove} className={styles.button} role="button" tabIndex={0}>
-              <img src={backicon} width={50} />
+              <img src={backicon} width={50} alt="되돌리기" />
             </div>
           </div>
         </section>
