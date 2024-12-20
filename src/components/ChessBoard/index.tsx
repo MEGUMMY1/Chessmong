@@ -7,16 +7,18 @@ import "../../assets/chessground.brown.css";
 import "../../assets/chessground.cburnett.css";
 import { Chess, SQUARES, Square } from "chess.js";
 import { Key } from "chessground/types";
-import Button from "../Button";
 import styles from "./ChessBoard.module.scss";
 import { useLectures } from "../../apis/get/getLecturesList";
 import Spinner from "../Layout/Spinner";
 import { Lecture } from "../../types/types";
 import { timeAgo } from "../../utils/timeAgo";
 import Logo from "../../assets/images/logo.png";
+import changeicon from "../../assets/icons/changeicon.png";
+import backicon from "../../assets/icons/back-icon.png";
 
 export default function ChessBoard() {
   const [chess, setChess] = useRecoilState(chessState);
+  const [isRotated, setIsRotated] = useState(false);
   const [turnColor, setTurnColor] = useState<"white" | "black">("white");
   const [history, setHistory] = useState<string[]>([chess.fen()]);
   const [lectures, setLectures] = useState<any[]>([]);
@@ -24,6 +26,7 @@ export default function ChessBoard() {
 
   const changeTurn = useCallback(() => {
     setTurnColor(turnColor === "white" ? "black" : "white");
+    setIsRotated((prev) => !prev);
   }, [turnColor]);
 
   const undoMove = useCallback(() => {
@@ -112,7 +115,7 @@ export default function ChessBoard() {
 
   const handleRequest = () => {
     const fen = chess.fen();
-    const subject = "[체스 문의]";
+    const subject = "[체스 강의 요청]";
     const body = `FEN: ${fen}`;
     const mailtoLink = `mailto:leemhoon000@gmail.com?subject=${encodeURIComponent(
       subject
@@ -128,10 +131,17 @@ export default function ChessBoard() {
             <Chessground key={chess.fen()} config={config} contained={true} />
           </div>
           <div className={styles.buttons}>
-            <div onClick={changeTurn} role="button" tabIndex={0}>
-              <Button onClick={undoMove}>흑백전환</Button>
+            <div
+              onClick={changeTurn}
+              className={`${styles.button} ${isRotated && styles.rotated}`}
+              role="button"
+              tabIndex={0}
+            >
+              <img src={changeicon} width={50} />
             </div>
-            <Button onClick={undoMove}>되돌리기</Button>
+            <div onClick={undoMove} className={styles.button} role="button" tabIndex={0}>
+              <img src={backicon} width={50} />
+            </div>
           </div>
         </section>
         <section className={styles.section}>

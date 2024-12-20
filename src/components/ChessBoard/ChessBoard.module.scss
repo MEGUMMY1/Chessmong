@@ -62,8 +62,28 @@
 
 .buttons {
   display: flex;
-  gap: 30px;
-  margin-top: 30px;
+  gap: 100px;
+  margin-top: 25px;
+
+  .button {
+    cursor: pointer;
+    background-color: #375670;
+    width: 70px;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50px;
+    transition: transform 0.3s ease;
+
+    &:hover {
+      background-color: lighten(#375670, 10%);
+    }
+
+    &.rotated {
+      transform: rotate(180deg);
+    }
+  }
 }
 
 .listContainer {
@@ -76,7 +96,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin-bottom: 80px;
+  margin-bottom: 90px;
 
   @media (max-width: 1024px) {
     width: 700px;
@@ -199,14 +219,14 @@
   gap: 30px;
 
   .message {
-    color: #2a3a47;
+    color: #1a2229;
   }
 
   .requestBtn {
     padding: 10px 20px;
     border-radius: 50px;
     background-color: #fff;
-    color: #2a3a47;
+    color: #1a2229;
     font-size: 1rem;
     font-weight: 800;
     outline: none;
