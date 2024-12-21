@@ -37,7 +37,7 @@
         border: 20px solid #d3d5d6;
         border-radius: 5px;
 
-        @media (max-height: 1080px) {
+        @media (max-height: 1080px) and (min-width: 1024px) {
             width: 450px;
             height: 450px;
         }
@@ -89,7 +89,7 @@
             transform: rotate(180deg);
         }
 
-        @media (max-height: 1080px) {
+        @media (max-height: 1080px) and (min-width: 1024px) {
             width: 60px;
             height: 60px;
 
@@ -122,10 +122,9 @@
     justify-content: center;
     margin-bottom: 90px;
 
-    @media (max-height: 1080px) {
+    @media (max-height: 1080px) and (min-width: 1024px) {
         height: 450px;
     }
-
     @media (max-width: 1024px) {
         width: 700px;
         height: 700px;
