@@ -252,6 +252,7 @@
         border: 1px solid #ccc;
         border-radius: 50px;
         background-color: #fff;
+        color: #1a2229;
         cursor: pointer;
         transition: background-color 0.3s, color 0.3s;
 
@@ -277,6 +278,10 @@
     flex-direction: column;
     align-items: center;
     gap: 30px;
+
+    @media (max-width: 550px) {
+        gap: 10px;
+    }
 }
 .noResultInit {
     width: 100%;
