@@ -217,16 +217,30 @@ export default function ChessBoard() {
                                 </div>
                             </>
                         ) : (
-                            <div className={styles.noResult}>
+                            <>
                                 {history.length === 1 ? (
-                                    <>
+                                    <div className={styles.noResultInit}>
                                         <img src={Logo} width={250} alt='결과 없음' />
                                         <p className={styles.message}>
                                             체스판을 구성하면 강의를 검색해드려요!
                                         </p>
-                                    </>
+                                    </div>
                                 ) : (
-                                    <>
+                                    <div className={styles.noResult}>
+                                        <div className={styles.channelFilters}>
+                                            {channelOptions.map((channel) => (
+                                                <button
+                                                    key={channel}
+                                                    onClick={() => handleChannelClick(channel)}
+                                                    className={`${styles.channelButton} ${
+                                                        selectedChannels.includes(channel) &&
+                                                        styles.selected
+                                                    }`}
+                                                >
+                                                    {channel}
+                                                </button>
+                                            ))}
+                                        </div>
                                         <img src={Logo} width={250} alt='결과 없음' />
                                         <p className={styles.message}>
                                             현재 상태로 등록된 강의가 없어요!
@@ -237,9 +251,9 @@ export default function ChessBoard() {
                                         >
                                             강의 요청
                                         </button>
-                                    </>
+                                    </div>
                                 )}
-                            </div>
+                            </>
                         )}
                     </div>
                 </section>

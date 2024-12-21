@@ -236,34 +236,36 @@
             }
         }
     }
-    .channelFilters {
-        display: flex;
-        gap: 10px;
-        margin-bottom: 15px;
-        flex-wrap: wrap;
+}
 
-        .channelButton {
-            padding: 10px 20px;
-            font-family: "Pretendard-Regular", sans-serif;
-            font-size: 14px;
-            border: 1px solid #ccc;
-            border-radius: 50px;
-            background-color: #fff;
-            cursor: pointer;
-            transition: background-color 0.3s, color 0.3s;
+.channelFilters {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+    flex-wrap: wrap;
+    justify-self: flex-start;
 
-            &:hover {
-                background-color: #e0e0e0;
-            }
+    .channelButton {
+        padding: 10px 20px;
+        font-family: "Pretendard-Regular", sans-serif;
+        font-size: 14px;
+        border: 1px solid #ccc;
+        border-radius: 50px;
+        background-color: #fff;
+        cursor: pointer;
+        transition: background-color 0.3s, color 0.3s;
+
+        &:hover {
+            background-color: #e0e0e0;
         }
+    }
 
-        .selected {
-            background-color: #375670;
-            color: #fff;
+    .selected {
+        background-color: #375670;
+        color: #fff;
 
-            &:hover {
-                background-color: #2a3a47;
-            }
+        &:hover {
+            background-color: #2a3a47;
         }
     }
 }
@@ -274,26 +276,33 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    gap: 30px;
+}
+.noResultInit {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     justify-content: center;
     gap: 30px;
+}
+.message {
+    color: #1a2229;
+}
 
-    .message {
-        color: #1a2229;
-    }
+.requestBtn {
+    padding: 10px 20px;
+    border-radius: 50px;
+    background-color: #fff;
+    color: #1a2229;
+    font-size: 1rem;
+    font-weight: 800;
+    outline: none;
+    border: none;
+    cursor: pointer;
 
-    .requestBtn {
-        padding: 10px 20px;
-        border-radius: 50px;
-        background-color: #fff;
-        color: #1a2229;
-        font-size: 1rem;
-        font-weight: 800;
-        outline: none;
-        border: none;
-        cursor: pointer;
-
-        &:hover {
-            text-decoration: underline;
-        }
+    &:hover {
+        text-decoration: underline;
     }
 }
