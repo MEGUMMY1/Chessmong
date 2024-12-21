@@ -256,8 +256,10 @@
         cursor: pointer;
         transition: background-color 0.3s, color 0.3s;
 
-        &:hover {
-            background-color: #e0e0e0;
+        @media (min-width: 600px) {
+            &:hover {
+                background-color: #e0e0e0;
+            }
         }
     }
 
@@ -265,8 +267,10 @@
         background-color: #375670;
         color: #fff;
 
-        &:hover {
-            background-color: #2a3a47;
+        @media (min-width: 600px) {
+            &:hover {
+                background-color: #2a3a47;
+            }
         }
     }
 }
