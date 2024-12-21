@@ -1,317 +1,317 @@
 .container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+
+  .sectionContainer {
     width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
 
-    .sectionContainer {
-        width: 100%;
-        height: 100%;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: 30px;
-
-        @media (max-width: 1024px) {
-            flex-direction: column;
-            gap: 30px;
-        }
-
-        .section {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            width: 100%;
-            margin-top: 50px;
-
-            @media (max-width: 1024px) {
-                height: auto;
-                margin-top: 0;
-            }
-        }
+    @media (max-width: 1024px) {
+      flex-direction: column;
+      gap: 30px;
     }
 
-    .chessContainer {
-        width: 600px;
-        height: 600px;
-        border: 20px solid #d3d5d6;
-        border-radius: 5px;
+    .section {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+      margin-top: 50px;
 
-        @media (max-height: 1080px) and (min-width: 1024px) {
-            width: 450px;
-            height: 450px;
-        }
-
-        @media (max-width: 1024px) {
-            width: 700px;
-            height: 700px;
-        }
-        @media (max-width: 550px) {
-            width: 500px;
-            height: 500px;
-        }
-        @media (max-width: 450px) {
-            width: 400px;
-            height: 400px;
-        }
-        @media (max-width: 425px) {
-            width: 350px;
-            height: 350px;
-        }
-        @media (max-width: 380px) {
-            width: 320px;
-            height: 320px;
-        }
+      @media (max-width: 1024px) {
+        height: auto;
+        margin-top: 0;
+      }
     }
+  }
+
+  .chessContainer {
+    width: 600px;
+    height: 600px;
+    border: 20px solid #d3d5d6;
+    border-radius: 5px;
+
+    @media (max-height: 900px) and (min-width: 1024px) {
+      width: 450px;
+      height: 450px;
+    }
+
+    @media (max-width: 1024px) {
+      width: 700px;
+      height: 700px;
+    }
+    @media (max-width: 550px) {
+      width: 500px;
+      height: 500px;
+    }
+    @media (max-width: 450px) {
+      width: 400px;
+      height: 400px;
+    }
+    @media (max-width: 425px) {
+      width: 350px;
+      height: 350px;
+    }
+    @media (max-width: 380px) {
+      width: 320px;
+      height: 320px;
+    }
+  }
 }
 
 .buttons {
+  display: flex;
+  gap: 100px;
+  margin-top: 25px;
+
+  .button {
+    cursor: pointer;
+    background-color: #375670;
+    width: 70px;
+    height: 70px;
     display: flex;
-    gap: 100px;
-    margin-top: 25px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50px;
+    transition: transform 0.3s ease;
 
-    .button {
-        cursor: pointer;
-        background-color: #375670;
-        width: 70px;
-        height: 70px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        border-radius: 50px;
-        transition: transform 0.3s ease;
-
-        &:hover {
-            background-color: lighten(#375670, 10%);
-        }
-
-        &.rotated {
-            transform: rotate(180deg);
-        }
-
-        @media (max-height: 1080px) and (min-width: 1024px) {
-            width: 60px;
-            height: 60px;
-
-            img {
-                width: 40px;
-                height: 40px;
-            }
-        }
-        @media (max-width: 550px) {
-            width: 60px;
-            height: 60px;
-
-            img {
-                width: 40px;
-                height: 40px;
-            }
-        }
+    &:hover {
+      background-color: lighten(#375670, 10%);
     }
+
+    &.rotated {
+      transform: rotate(180deg);
+    }
+
+    @media (max-height: 900px) and (min-width: 1024px) {
+      width: 60px;
+      height: 60px;
+
+      img {
+        width: 40px;
+        height: 40px;
+      }
+    }
+    @media (max-width: 550px) {
+      width: 60px;
+      height: 60px;
+
+      img {
+        width: 40px;
+        height: 40px;
+      }
+    }
+  }
 }
 
 .listContainer {
+  width: 100%;
+  height: 600px;
+  background-color: #e0e5eb;
+  border-radius: 5px;
+  padding: 15px 10px 20px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 90px;
+
+  @media (max-height: 900px) and (min-width: 1024px) {
+    height: 450px;
+  }
+  @media (max-width: 1024px) {
+    width: 700px;
+    height: 700px;
+    margin-bottom: 0;
+  }
+  @media (max-width: 550px) {
+    width: 500px;
+    height: 500px;
+    padding: 15px 10px 15px 15px;
+  }
+  @media (max-width: 450px) {
+    width: 400px;
+    height: 400px;
+  }
+  @media (max-width: 425px) {
+    width: 350px;
+    height: 350px;
+  }
+  @media (max-width: 380px) {
+    width: 320px;
+    height: 320px;
+  }
+
+  .innerContainer {
     width: 100%;
-    height: 600px;
-    background-color: #e0e5eb;
-    border-radius: 5px;
-    padding: 15px 10px 20px 20px;
+    height: 100%;
+    padding-right: 10px;
+    gap: 10px;
+    overflow-y: auto;
+    overflow-x: hidden;
     display: flex;
-    flex-direction: column;
     align-items: center;
-    justify-content: center;
-    margin-bottom: 90px;
+    flex-direction: column;
 
-    @media (max-height: 1080px) and (min-width: 1024px) {
-        height: 450px;
-    }
-    @media (max-width: 1024px) {
-        width: 700px;
-        height: 700px;
-        margin-bottom: 0;
-    }
-    @media (max-width: 550px) {
-        width: 500px;
-        height: 500px;
-        padding: 15px 10px 15px 15px;
-    }
-    @media (max-width: 450px) {
-        width: 400px;
-        height: 400px;
-    }
-    @media (max-width: 425px) {
-        width: 350px;
-        height: 350px;
-    }
-    @media (max-width: 380px) {
-        width: 320px;
-        height: 320px;
+    &::-webkit-scrollbar {
+      width: 8px;
     }
 
-    .innerContainer {
-        width: 100%;
-        height: 100%;
-        padding-right: 10px;
-        gap: 10px;
-        overflow-y: auto;
-        overflow-x: hidden;
+    &::-webkit-scrollbar-track {
+      background: #f1f1f1;
+      border-radius: 10px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background: #2a3a47;
+      border-radius: 10px;
+    }
+
+    &::-webkit-scrollbar-thumb:hover {
+      background: #375670;
+    }
+
+    .lectures {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .lectureWrapper {
+      background-color: #fff;
+      border-radius: 5px;
+      padding: 15px;
+      display: flex;
+      gap: 20px;
+      cursor: pointer;
+
+      @media (max-width: 550px) {
+        flex-direction: column;
+        gap: 15px;
+      }
+
+      .lectureInfo {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+
+      .image {
+        align-self: center;
+        border-radius: 5px;
+
+        @media (max-width: 550px) {
+          align-self: flex-start;
+          width: 100%;
+          height: auto;
+        }
+      }
+
+      .title {
+        font-size: 18px;
+        margin-bottom: 8px;
+        color: #1b1b1b;
+
+        &:hover {
+          text-decoration: underline;
+          color: #2a3a47;
+        }
+
+        @media (max-width: 550px) {
+          font-size: 16px;
+        }
+      }
+
+      .subtitle {
         display: flex;
         align-items: center;
-        flex-direction: column;
-
-        &::-webkit-scrollbar {
-            width: 8px;
-        }
-
-        &::-webkit-scrollbar-track {
-            background: #f1f1f1;
-            border-radius: 10px;
-        }
-
-        &::-webkit-scrollbar-thumb {
-            background: #2a3a47;
-            border-radius: 10px;
-        }
-
-        &::-webkit-scrollbar-thumb:hover {
-            background: #375670;
-        }
-
-        .lectures {
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-        }
-
-        .lectureWrapper {
-            background-color: #fff;
-            border-radius: 5px;
-            padding: 15px;
-            display: flex;
-            gap: 20px;
-            cursor: pointer;
-
-            @media (max-width: 550px) {
-                flex-direction: column;
-                gap: 15px;
-            }
-
-            .lectureInfo {
-                display: flex;
-                flex-direction: column;
-                justify-content: space-between;
-            }
-
-            .image {
-                align-self: center;
-                border-radius: 5px;
-
-                @media (max-width: 550px) {
-                    align-self: flex-start;
-                    width: 100%;
-                    height: auto;
-                }
-            }
-
-            .title {
-                font-size: 18px;
-                margin-bottom: 8px;
-                color: #1b1b1b;
-
-                &:hover {
-                    text-decoration: underline;
-                    color: #2a3a47;
-                }
-
-                @media (max-width: 550px) {
-                    font-size: 16px;
-                }
-            }
-
-            .subtitle {
-                display: flex;
-                align-items: center;
-                gap: 5px;
-                font-size: 14px;
-            }
-        }
+        gap: 5px;
+        font-size: 14px;
+      }
     }
+  }
 }
 
 .channelFilters {
-    display: flex;
-    gap: 10px;
-    margin-bottom: 15px;
-    flex-wrap: wrap;
-    justify-self: flex-start;
+  display: flex;
+  gap: 10px;
+  margin-bottom: 15px;
+  flex-wrap: wrap;
+  justify-self: flex-start;
 
-    .channelButton {
-        padding: 10px 20px;
-        font-family: "Pretendard-Regular", sans-serif;
-        font-size: 14px;
-        border: 1px solid #ccc;
-        border-radius: 50px;
-        background-color: #fff;
-        color: #1a2229;
-        cursor: pointer;
-        transition: background-color 0.3s, color 0.3s;
-
-        @media (min-width: 600px) {
-            &:hover {
-                background-color: #e0e0e0;
-            }
-        }
-    }
-
-    .selected {
-        background-color: #375670;
-        color: #fff;
-
-        @media (min-width: 600px) {
-            &:hover {
-                background-color: #2a3a47;
-            }
-        }
-    }
-}
-
-.noResult {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 30px;
-
-    @media (max-width: 550px) {
-        gap: 10px;
-    }
-}
-.noResultInit {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 30px;
-}
-.message {
-    color: #1a2229;
-}
-
-.requestBtn {
+  .channelButton {
     padding: 10px 20px;
+    font-family: "Pretendard-Regular", sans-serif;
+    font-size: 14px;
+    border: 1px solid #ccc;
     border-radius: 50px;
     background-color: #fff;
     color: #1a2229;
-    font-size: 1rem;
-    font-weight: 800;
-    outline: none;
-    border: none;
     cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
 
-    &:hover {
-        text-decoration: underline;
+    @media (min-width: 600px) {
+      &:hover {
+        background-color: #e0e0e0;
+      }
     }
+  }
+
+  .selected {
+    background-color: #375670;
+    color: #fff;
+
+    @media (min-width: 600px) {
+      &:hover {
+        background-color: #2a3a47;
+      }
+    }
+  }
+}
+
+.noResult {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+
+  @media (max-width: 550px) {
+    gap: 10px;
+  }
+}
+.noResultInit {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+}
+.message {
+  color: #1a2229;
+}
+
+.requestBtn {
+  padding: 10px 20px;
+  border-radius: 50px;
+  background-color: #fff;
+  color: #1a2229;
+  font-size: 1rem;
+  font-weight: 800;
+  outline: none;
+  border: none;
+  cursor: pointer;
+
+  &:hover {
+    text-decoration: underline;
+  }
 }
