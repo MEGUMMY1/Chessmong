@@ -178,12 +178,14 @@
     }
 
     .lectures {
+      width: 100%;
       display: flex;
       flex-direction: column;
       gap: 10px;
     }
 
     .lectureWrapper {
+      width: 100%;
       background-color: #fff;
       border-radius: 5px;
       padding: 15px;
@@ -214,17 +216,13 @@
       }
 
       .title {
-        font-size: 18px;
+        font-size: 16px;
         margin-bottom: 8px;
         color: #1b1b1b;
 
         &:hover {
           text-decoration: underline;
           color: #2a3a47;
-        }
-
-        @media (max-width: 550px) {
-          font-size: 16px;
         }
       }
 
@@ -233,6 +231,7 @@
         align-items: center;
         gap: 5px;
         font-size: 14px;
+        color: #494949;
       }
     }
   }
