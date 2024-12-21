@@ -280,13 +280,9 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 30px;
-
-  @media (max-width: 550px) {
-    gap: 10px;
-  }
+  justify-content: space-between;
 }
-.noResultInit {
+.noResultInner {
   width: 100%;
   height: 100%;
   display: flex;
@@ -294,6 +290,10 @@
   align-items: center;
   justify-content: center;
   gap: 30px;
+
+  @media (max-width: 550px) {
+    gap: 10px;
+  }
 }
 .message {
   color: #1a2229;
