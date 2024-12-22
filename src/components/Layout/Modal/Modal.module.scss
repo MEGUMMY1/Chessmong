@@ -4,6 +4,7 @@
   left: 0;
   width: 100%;
   height: 100%;
+  padding: 0 10px;
   background: rgba(0, 0, 0, 0.6);
   display: flex;
   align-items: center;
@@ -22,6 +23,11 @@
     flex-direction: column;
     gap: 25px;
 
+    @media (max-width: 550px) {
+      max-width: 350px;
+      width: 100%;
+    }
+
     .title {
       color: #1a2127;
       font-size: 1.2rem;
@@ -32,6 +38,14 @@
       right: 10px;
       top: 10px;
       cursor: pointer;
+    }
+
+    .wrapper {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
     }
 
     .input {
@@ -59,12 +73,9 @@
     }
 
     .confirmButton {
-      width: 310px;
+      width: 100%;
       padding: 10px 20px;
       margin-top: 20px;
-      position: absolute;
-      bottom: 20px;
-      left: 20px;
       border: none;
       border-radius: 5px;
       background-color: #7a94ac;

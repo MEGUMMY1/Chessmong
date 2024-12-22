@@ -26,38 +26,3 @@
     display: none;
   }
 }
-
-.hamburger {
-  cursor: pointer;
-}
-
-.dropdown {
-  position: absolute;
-  top: 70px;
-  right: 0;
-  background-color: #fff;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  z-index: 10;
-  display: flex;
-  flex-direction: column;
-}
-
-.dropdownItem {
-  padding: 12px 20px;
-  text-align: center;
-  cursor: pointer;
-  transition: background-color 0.3s;
-  color: #333;
-  text-decoration: none;
-
-  &:hover {
-    background-color: #ebebeb;
-    border-radius: 8px;
-  }
-
-  &:not(:last-child) {
-    border-bottom: 1px solid #eee;
-  }
-}

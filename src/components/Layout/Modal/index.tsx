@@ -65,7 +65,7 @@ export default function Modal() {
           <img src={Close} width={30} alt="닫기" />
         </div>
         {modal.type === "input" ? (
-          <>
+          <div className={styles.wrapper}>
             <div>
               <input
                 type="text"
@@ -77,16 +77,14 @@ export default function Modal() {
               />
               {errorMessage && <div className={styles.errorMessage}>{errorMessage}</div>}
             </div>
-            <div className={styles.buttons}>
-              <button
-                onClick={handleConfirm}
-                className={`${styles.confirmButton} ${!!errorMessage && styles.disabled}`}
-                disabled={!!errorMessage}
-              >
-                제출
-              </button>
-            </div>
-          </>
+            <button
+              onClick={handleConfirm}
+              className={`${styles.confirmButton} ${!!errorMessage && styles.disabled}`}
+              disabled={!!errorMessage}
+            >
+              제출
+            </button>
+          </div>
         ) : (
           <p className={styles.message}>{modal.message}</p>
         )}

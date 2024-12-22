@@ -15,6 +15,7 @@ import { timeAgo } from "../../utils/timeAgo";
 import Logo from "../../assets/images/logo.png";
 import changeicon from "../../assets/icons/changeicon.png";
 import backicon from "../../assets/icons/back-icon.png";
+import Dropdown from "../Layout/Dropdown";
 
 export default function ChessBoard() {
   const [chess, setChess] = useRecoilState(chessState);
@@ -23,6 +24,7 @@ export default function ChessBoard() {
   const [history, setHistory] = useState<string[]>([chess.fen()]);
   const [lectures, setLectures] = useState<any[]>([]);
   const [selectedChannels, setSelectedChannels] = useState<string[]>([]);
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
   const channelOptions = ["체스프릭김창훈", "슥슥이", "체스막타"];
   const { data, isLoading } = useLectures(
@@ -136,6 +138,10 @@ export default function ChessBoard() {
     );
   };
 
+  const toggleDropdown = () => {
+    setIsDropdownOpen((prev) => !prev);
+  };
+
   return (
     <div className={styles.container}>
       <section className={styles.sectionContainer}>
@@ -144,6 +150,9 @@ export default function ChessBoard() {
             <Chessground key={chess.fen()} config={config} contained={true} />
           </div>
           <div className={styles.buttons}>
+            <div className={`${styles.button} ${styles.mobile}`} role="button" tabIndex={0}>
+              <Dropdown toggleDropdown={toggleDropdown} />
+            </div>
             <div
               onClick={changeTurn}
               className={`${styles.button} ${isRotated && styles.rotated}`}
