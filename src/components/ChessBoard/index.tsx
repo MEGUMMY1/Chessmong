@@ -24,7 +24,7 @@ export default function ChessBoard() {
   const [history, setHistory] = useState<string[]>([chess.fen()]);
   const [lectures, setLectures] = useState<any[]>([]);
   const [selectedChannels, setSelectedChannels] = useState<string[]>([]);
-  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const [, setIsDropdownOpen] = useState(false);
 
   const channelOptions = ["체스프릭김창훈", "슥슥이", "체스막타"];
   const { data, isLoading } = useLectures(

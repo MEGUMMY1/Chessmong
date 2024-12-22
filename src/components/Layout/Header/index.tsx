@@ -4,7 +4,7 @@ import Logo from "../../../assets/images/logo.png";
 import Dropdown from "../Dropdown";
 
 export default function Header() {
-  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const [, setIsDropdownOpen] = useState(false);
 
   const handleReset = () => {
     window.location.reload();
