@@ -119,16 +119,16 @@ export default function ChessBoard() {
     window.open(link, "_blank");
   };
 
-  const handleRequest = () => {
-    const fen = chess.fen();
-    const subject = "[체스 강의 요청]";
-    const body = `FEN: ${fen}`;
-    const mailtoLink = `mailto:leemhoon000@gmail.com?subject=${encodeURIComponent(
-      subject
-    )}&body=${encodeURIComponent(body)}`;
+  // const handleRequest = () => {
+  //   const fen = chess.fen();
+  //   const subject = "[체스 강의 요청]";
+  //   const body = `FEN: ${fen}`;
+  //   const mailtoLink = `mailto:leemhoon000@gmail.com?subject=${encodeURIComponent(
+  //     subject
+  //   )}&body=${encodeURIComponent(body)}`;
 
-    window.location.href = mailtoLink;
-  };
+  //   window.location.href = mailtoLink;
+  // };
 
   const handleChannelClick = (channel: string) => {
     setSelectedChannels((prev) =>
@@ -229,9 +229,9 @@ export default function ChessBoard() {
                     <div className={styles.noResultInner}>
                       <img src={Logo} width={250} alt="결과 없음" />
                       <p className={styles.message}>현재 상태로 등록된 강의가 없어요!</p>
-                      <button onClick={handleRequest} className={styles.requestBtn}>
+                      {/* <button onClick={handleRequest} className={styles.requestBtn}>
                         강의 요청
-                      </button>
+                      </button> */}
                     </div>
                   </div>
                 )}
