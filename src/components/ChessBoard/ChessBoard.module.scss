@@ -324,6 +324,10 @@
 }
 .message {
   color: #1a2229;
+
+  @media (max-width: 550px) {
+    font-size: 14px;
+  }
 }
 
 .requestBtn {
