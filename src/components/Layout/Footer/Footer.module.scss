@@ -15,7 +15,7 @@
   .footerWrapper {
     width: 70%;
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
   }
 }
 
@@ -26,13 +26,4 @@
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-}
-
-.contactBtn {
-  color: #fff;
-  cursor: pointer;
-
-  &:hover {
-    color: #2a3a47;
-  }
 }
