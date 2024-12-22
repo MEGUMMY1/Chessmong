@@ -48,6 +48,15 @@ export default function Header() {
     });
   };
 
+  const handleSponsor = () => {
+    setModal({
+      type: "alert",
+      title: "후원 안내",
+      message:
+        "저희는 취업 준비 중인 두 명의 개발자입니다.\n여러분의 소중한 후원은 서버 비용 지원에 큰 도움이 됩니다. \n체스몽에게 큰 힘이 되어 주셔서 감사합니다! \n\n국민은행 임○○ 561801-01-601221",
+    });
+  };
+
   return (
     <header className={styles.container}>
       <div className={styles.bar}>
@@ -80,8 +89,13 @@ export default function Header() {
               >
                 기능 요청
               </a>
-              <div className={styles.dropdownItem} role="button" tabIndex={0}>
-                후원 문의
+              <div
+                className={styles.dropdownItem}
+                role="button"
+                tabIndex={0}
+                onClick={handleSponsor}
+              >
+                후원 안내
               </div>
             </div>
           )}

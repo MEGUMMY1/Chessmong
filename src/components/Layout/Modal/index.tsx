@@ -64,29 +64,32 @@ export default function Modal() {
         <div className={styles.closeBtn} onClick={handleClose}>
           <img src={Close} width={30} alt="닫기" />
         </div>
-        {modal.type === "input" && (
-          <div>
-            <input
-              type="text"
-              value={inputValue}
-              onChange={(e) => setInputValue(e.target.value)}
-              onKeyDown={handleKeyDown}
-              className={`${styles.input} ${errorMessage && styles.errorOutline}`}
-              placeholder={modal.placeholder}
-            />
-            {errorMessage && <div className={styles.errorMessage}>{errorMessage}</div>}
-          </div>
+        {modal.type === "input" ? (
+          <>
+            <div>
+              <input
+                type="text"
+                value={inputValue}
+                onChange={(e) => setInputValue(e.target.value)}
+                onKeyDown={handleKeyDown}
+                className={`${styles.input} ${errorMessage && styles.errorOutline}`}
+                placeholder={modal.placeholder}
+              />
+              {errorMessage && <div className={styles.errorMessage}>{errorMessage}</div>}
+            </div>
+            <div className={styles.buttons}>
+              <button
+                onClick={handleConfirm}
+                className={`${styles.confirmButton} ${!!errorMessage && styles.disabled}`}
+                disabled={!!errorMessage}
+              >
+                제출
+              </button>
+            </div>
+          </>
+        ) : (
+          <p className={styles.message}>{modal.message}</p>
         )}
-        {modal.type === "alert" && <p className={styles.message}>{modal.message}</p>}
-        <div className={styles.buttons}>
-          <button
-            onClick={handleConfirm}
-            className={`${styles.confirmButton} ${!!errorMessage && styles.disabled}`}
-            disabled={!!errorMessage}
-          >
-            확인
-          </button>
-        </div>
       </div>
     </div>
   );
