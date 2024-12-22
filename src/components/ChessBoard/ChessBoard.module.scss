@@ -37,11 +37,14 @@
     border: 20px solid #d3d5d6;
     border-radius: 5px;
 
-    @media (max-height: 900px) and (min-width: 1024px) {
+    @media (max-height: 800px) and (min-width: 1024px) {
       width: 450px;
       height: 450px;
     }
-
+    @media (max-height: 700px) and (min-width: 1024px) {
+      width: 400px;
+      height: 400px;
+    }
     @media (max-width: 1024px) {
       width: 700px;
       height: 700px;
@@ -69,6 +72,10 @@
   display: flex;
   gap: 100px;
   margin-top: 25px;
+
+  @media (max-height: 650px) and (min-width: 1024px) {
+    margin-top: 15px;
+  }
 
   .button {
     cursor: pointer;
@@ -98,6 +105,15 @@
         height: 40px;
       }
     }
+    @media (max-height: 700px) and (min-width: 1024px) {
+      width: 50px;
+      height: 50px;
+
+      img {
+        width: 30px;
+        height: 30px;
+      }
+    }
     @media (max-width: 550px) {
       width: 60px;
       height: 60px;
@@ -124,6 +140,10 @@
 
   @media (max-height: 900px) and (min-width: 1024px) {
     height: 450px;
+  }
+  @media (max-height: 700px) and (min-width: 1024px) {
+    height: 400px;
+    margin-bottom: 70px;
   }
   @media (max-width: 1024px) {
     width: 700px;

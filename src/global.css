@@ -11,4 +11,5 @@ body {
   font-family: "Pretendard-Regular", sans-serif;
   line-height: 20px;
   letter-spacing: 0.4px;
+  overflow-x: hidden;
 }
