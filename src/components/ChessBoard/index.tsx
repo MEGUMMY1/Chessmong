@@ -26,10 +26,28 @@ export default function ChessBoard() {
   const [selectedChannels, setSelectedChannels] = useState<string[]>([]);
   const [, setIsDropdownOpen] = useState(false);
 
-  const channelOptions = ["체스프릭김창훈", "슥슥이", "체스막타"];
+  const channelOptions = ["체스프릭김창훈", "체스막타", "체스인사이드", "슥슥이", "천명신화"];
+  const getMappedChannels = (channels: string[]) => {
+    const channelMap: { [key: string]: string[] } = {
+      체스인사이드: ["Chessinside", "Chesscom Korea"],
+      천명신화: ["천명신화의 체스이야기김도윤"],
+    };
+
+    const mappedChannels: string[] = [];
+    channels.forEach((channel) => {
+      if (channelMap[channel]) {
+        mappedChannels.push(...channelMap[channel]);
+      } else {
+        mappedChannels.push(channel);
+      }
+    });
+
+    return mappedChannels;
+  };
+
   const { data, isLoading } = useLectures(
     chess.fen(),
-    selectedChannels.length > 0 ? selectedChannels.join(",") : undefined
+    selectedChannels.length > 0 ? getMappedChannels(selectedChannels).join(",") : undefined
   );
 
   const changeTurn = useCallback(() => {
