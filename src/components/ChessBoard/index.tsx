@@ -29,7 +29,7 @@ export default function ChessBoard() {
   const channelOptions = ["체스프릭김창훈", "체스막타", "체스인사이드", "슥슥이", "천명신화"];
   const getMappedChannels = (channels: string[]) => {
     const channelMap: { [key: string]: string[] } = {
-      체스인사이드: ["Chessinside", "Chesscom Korea"],
+      체스인사이드: ["chessinside", "Chesscom Korea"],
       천명신화: ["천명신화의 체스이야기김도윤"],
     };
 
