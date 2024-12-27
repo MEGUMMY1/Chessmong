@@ -1,46 +1,35 @@
-# Getting Started with Create React App
+## 체스 초보자들을 위한 오프닝 강의 검색 사이트
+### FE1, BE1<br/>
+### 2024.12<br/>
+`React`, `TypeScript`, `Recoil`, `SCSS`, `React-Query` 
+<br/>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+👉 [**구경하러 가기**](https://chessmong.com/)
 
-## Available Scripts
+![image](https://github.com/user-attachments/assets/688f512a-7db4-4791-9ff9-907c5547302d)
 
-In the project directory, you can run:
+## 서비스 출시 직후 뜨거운 반응!!
 
-### `npm start`
+👉 [**반응 보러가기**](https://gall.dcinside.com/mgallery/board/view/?id=chess&no=195623&exception_mode=notice&page=1)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+![image](https://github.com/user-attachments/assets/1d2b7330-d3d0-42a4-8307-5f8ec3af6997)
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## 구독자 35만 유튜버의 샤라웃!!
 
-### `npm test`
+👉 [**유튜브 링크**](https://www.youtube.com/channel/UCFE9BolPlT2qtVFmJa9Y6gA/community?lb=UgkxFKxgJSwjFlqmPTEFhmWXKct7X-ql3teH)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+![image](https://github.com/user-attachments/assets/8dbaaebc-3208-4386-8324-c28c205d5863)
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## 활성사용자 300명 돌파
+~서비스 출시 3일차부터 집계시작되었습니다ㅠㅠ~
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+![image](https://github.com/user-attachments/assets/598dc8c2-8ba7-41a4-b6f1-45e539649b68)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Architecture
 
-### `npm run eject`
+![image](https://github.com/user-attachments/assets/841a62bc-fce8-405f-95d5-50996c89af0d)
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+#### Redis 그만! 이제 백엔드도 CDN 캐싱 적용
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+![image](https://github.com/user-attachments/assets/df66cd42-0636-40f2-ad89-846cd16cc683)
