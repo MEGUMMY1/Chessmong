@@ -218,7 +218,7 @@ export default function ChessBoard() {
                             width={120}
                           />
                           <div className={styles.lectureInfo}>
-                            <h3 className={styles.title}>{lecture.title}</h3>
+                            <p className={styles.title}>{lecture.title}</p>
                             <div className={styles.subtitle}>
                               <p>{lecture.channelName}</p>
                               <p>·</p>
