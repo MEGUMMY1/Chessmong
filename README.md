@@ -17,11 +17,7 @@
 
 ## ♟️ 서비스 시연
 
-![image](https://github.com/user-attachments/assets/af4f40b9-415a-46a5-8206-5b0feea9447a)
-
-![image](https://github.com/user-attachments/assets/542468e2-8d25-499a-a195-81343cdf4cd9)
-
-![image](https://github.com/user-attachments/assets/d60f9b0f-855f-4e10-9067-18d901c935a6)
+![2024-12-3018 27 26-ezgif com-video-to-gif-converter](https://github.com/user-attachments/assets/05719023-1d44-4781-83ee-f1bb03259115)
 
 ![image](https://github.com/user-attachments/assets/8edf2af4-b3be-44ce-b200-cb78afa46e99)![image](https://github.com/user-attachments/assets/a11b1691-b8e5-416e-81f7-5e850263b913)
 
@@ -46,7 +42,6 @@
 <br/>
 
 ## ♟️ 활성사용자 400명 돌파
-~서비스 출시 3일차부터 집계시작되었습니다ㅠㅠ~
 
 ![image](https://github.com/user-attachments/assets/30a1eef8-600e-4385-9a86-ecbaaec235ca)
 
