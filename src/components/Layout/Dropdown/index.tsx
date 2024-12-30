@@ -5,6 +5,8 @@ import { useUploadRequest } from "../../../apis/post/postRequest";
 import styles from "./Dropdown.module.scss";
 import Icon from "../../../assets/icons/hamburger.png";
 import useClickOutside from "../../../hooks/useClickOutside";
+import { useSponsors } from "../../../apis/get/getSponsors";
+import { formatCurrency } from "../../../utils/formatCurrency";
 
 interface DropdownProps {
   toggleDropdown: () => void;
@@ -14,6 +16,7 @@ export default function Dropdown({ toggleDropdown }: DropdownProps) {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const setModal = useSetRecoilState(modalState);
   const { mutate } = useUploadRequest();
+  const { data: sponsors, isLoading, isError } = useSponsors();
 
   const handleUploadRequest = () => {
     setModal({
@@ -40,11 +43,21 @@ export default function Dropdown({ toggleDropdown }: DropdownProps) {
   };
 
   const handleSponsor = () => {
+    const sponsorList = isLoading
+      ? "후원자 목록을 불러오는 중입니다..."
+      : isError || !sponsors
+      ? "후원자 목록을 불러오는 데 실패했습니다."
+      : sponsors
+          .map(
+            (sponsor: { name: string; amount: number }) =>
+              `${sponsor.name}: ${formatCurrency(sponsor.amount)}원`
+          )
+          .join("\n");
+
     setModal({
       type: "alert",
       title: "후원 안내",
-      message:
-        "저희는 취업 준비 중인 두 명의 개발자입니다.\n여러분의 소중한 후원은 서버 비용 지원에 큰 도움이 됩니다! \n\n국민은행 임○○ 561801-01-601221",
+      message: `저희는 취업 준비 중인 두 명의 개발자입니다.\n여러분의 소중한 후원은 서버 비용 지원에 큰 도움이 됩니다! \n\n국민은행 임○○ 561801-01-601221\n\n[후원자 목록]\n${sponsorList}\n\n`,
     });
   };
 

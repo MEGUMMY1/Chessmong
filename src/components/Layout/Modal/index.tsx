@@ -66,17 +66,15 @@ export default function Modal() {
         </div>
         {modal.type === "input" ? (
           <div className={styles.wrapper}>
-            <div>
-              <input
-                type="text"
-                value={inputValue}
-                onChange={(e) => setInputValue(e.target.value)}
-                onKeyDown={handleKeyDown}
-                className={`${styles.input} ${errorMessage && styles.errorOutline}`}
-                placeholder={modal.placeholder}
-              />
-              {errorMessage && <div className={styles.errorMessage}>{errorMessage}</div>}
-            </div>
+            <input
+              type="text"
+              value={inputValue}
+              onChange={(e) => setInputValue(e.target.value)}
+              onKeyDown={handleKeyDown}
+              className={`${styles.input} ${errorMessage && styles.errorOutline}`}
+              placeholder={modal.placeholder}
+            />
+            {errorMessage && <div className={styles.errorMessage}>{errorMessage}</div>}
             <button
               onClick={handleConfirm}
               className={`${styles.confirmButton} ${!!errorMessage && styles.disabled}`}
